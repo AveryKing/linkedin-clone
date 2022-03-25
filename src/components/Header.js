@@ -1,6 +1,7 @@
 import '../styles/Header.css';
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
+import HeaderOption from "./HeaderOption";
 const Header = () => {
     return (
         <div>
@@ -15,7 +16,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="header__right">
-
+                    <HeaderOption text='' icon={} />
                 </div>
             </div>
         </div>
