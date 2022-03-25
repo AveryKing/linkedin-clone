@@ -1,3 +1,6 @@
+.header {
+    display:flex;
+}
 .header__left {
     position:sticky;
     display:flex;
