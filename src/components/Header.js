@@ -1,11 +1,10 @@
 import '../styles/Header.css';
 import React from 'react';
-import SearchIcon from '@mui/icons-material';
+import SearchIcon from '@mui/icons-material/Search';
 const Header = () => {
     return (
         <div>
             <div className="header">
-                <h1>header</h1>
                 <div className="header__left">
                     <img
                         src="https://raw.githubusercontent.com/AveryKing/linkedin-clone/0209f71716b47ce54b0a68330ab8cc088fd9315c/icons8-linkedin.svg"
