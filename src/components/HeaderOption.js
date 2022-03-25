@@ -4,7 +4,7 @@ const HeaderOption = ({Icon,text}) => {
     return (
         <div>
             <div className="headerOption">
-
+                {Icon && <Icon className='headerOption__icon'/> }
             </div>
         </div>
     );
