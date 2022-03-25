@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/HeaderOption.css';
-const HeaderOption = ({Icon,text}) => {
+const HeaderOption = ({avatar, Icon,text}) => {
     return (
         <div>
             <div className="headerOption">
