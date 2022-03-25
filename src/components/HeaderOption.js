@@ -1,5 +1,5 @@
 import React from 'react';
-import './HeaderOption.css';
+import '../styles/HeaderOption.css';
 const HeaderOption = () => {
     return (
         <div>
