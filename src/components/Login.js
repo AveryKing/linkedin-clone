@@ -83,7 +83,7 @@ const Login = () => {
             {mode === 1 &&<p className='login__notMember'>Not a member?{" "}
                 <span className='login__registerNow' onClick={()=>setMode(2)}>Register Now</span></p>  }
             <footer>
-                Created with <FavoriteIcon sx={{position:'relative',fontSize:'20px',top:'5px',color:'#ff004d'}} /> by Avery King
+                Built with <FavoriteIcon sx={{position:'relative',fontSize:'20px',top:'5px',color:'#ff004d'}} /> by Avery King
             </footer>
         </div>
     );
