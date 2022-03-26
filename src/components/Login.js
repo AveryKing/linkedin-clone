@@ -3,6 +3,7 @@ import '../styles/Login.css';
 import {auth} from "../lib/firebase";
 import {useDispatch} from "react-redux";
 import {login} from "../redux/userSlice";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -13,9 +14,9 @@ const Login = () => {
     const register = (e) => {
         e.preventDefault();
         if (!name) return alert('Please enter a name');
-        auth.createUserWithEmailAndPassword(email, password)
+        createUserWithEmailAndPassword(auth,email, password)
             .then((userAuth) => {
-                userAuth.user.updateProfile({
+                updateProfile(userAuth.user, {
                     photoURL: profilePicture,
                     displayName: name
                 })
@@ -40,7 +41,7 @@ const Login = () => {
         <div className='login'>
             <img src="https://www.paperlesslabacademy.com/wp-content/uploads/2017/02/linkedin-logo-transparent.png"
                  alt=""/>
-            <form onSubmit={register}>
+            <form onSubmit={loginToApp}>
                 <input value={name} onChange={e => setName(e.target.value)} placeholder="Full name" type="text"/>
                 <input value={profilePicture} onChange={e => setProfilePicture(e.target.value)}
                        placeholder="Profile pic URL (optional)" type="text"/>
