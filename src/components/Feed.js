@@ -60,15 +60,14 @@ const Feed = () => {
                     <InputOption Icon={CalendarViewDayIcon} text='Write Article' color='#7FC15E'/>
                 </div>
             </div>
-            {posts.map((post,index) => {
-   
-                return (
+            {posts.map(({id, data: {name,description,message,photoUrl}},index) =>  (
                 <Post key={index}
-                      name='Avery King'
-                      description='this is a test'
-                      message={post.data.message}
-                      /> )
-            })}
+                      name={name}
+                      description={description}
+                      message={message}
+                      photoUrl={photoUrl}
+                      />
+            ))}
 
         </div>
     );
