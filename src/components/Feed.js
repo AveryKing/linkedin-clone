@@ -50,7 +50,7 @@ const Feed = () => {
             name: user.displayName,
             description: user.email,
             message: postInput,
-            photoUrl: user.photoUrl,
+            photoUrl: user.photoUrl ?? '',
             timestamp: serverTimestamp()
         });
         setPostInput('')
