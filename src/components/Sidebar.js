@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/Sidebar.css';
 import {Avatar} from "@mui/material";
+import {useSelector} from "react-redux";
+import {selectUser} from "../redux/userSlice";
 
 const recentItem = (topic) => {
     return <div className='sidebar__recentItem'>
