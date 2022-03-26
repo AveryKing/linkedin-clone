@@ -27,4 +27,5 @@
 .post__buttons {
     display:flex;
     font-size:13px;
+    justify-content: space-evenly;
 }

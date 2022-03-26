@@ -9,7 +9,9 @@ import InputOption from "./InputOption";
 import Post from "./Post";
 const Feed = () => {
     const [posts, setPosts] = useState([1,2,2,2,2,2,2]);
-
+    const sendPost = (evt) => {
+        evt.preventDefault();
+    }
     return (
         <div className='feed'>
             <div className="feed__inputContainer">
@@ -17,7 +19,7 @@ const Feed = () => {
                     <CreateIcon />
                     <form>
                         <input type="text"/>
-                        <button type='submit'>Send</button>
+                        <button onClick={sendPost} type='submit'>Send</button>
                     </form>
                 </div>
                 <div className="feed__inputOptions">
