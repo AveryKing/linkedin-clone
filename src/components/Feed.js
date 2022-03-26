@@ -6,6 +6,7 @@ import EventNoteIcon from '@mui/icons-material/EventNote'
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay'
 import '../styles/Feed.css';
 import InputOption from "./InputOption";
+import Post from "./Post";
 const Feed = () => {
     return (
         <div className='feed'>
@@ -24,6 +25,7 @@ const Feed = () => {
                     <InputOption Icon={CalendarViewDayIcon} text='Write Article' color='#7FC15E'/>
                 </div>
             </div>
+            <Post name='Avery King' description='This is a test' message='wow this worked'/>
         </div>
     );
 };
