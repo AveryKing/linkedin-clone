@@ -27,9 +27,10 @@ function App() {
     }, [])
   return (
     <div className="app">
-      <Header/>
+
         {user ? (
             <div className="app__body">
+                <Header/>
                 <Sidebar />
                 <Feed/>
                 <Widgets />

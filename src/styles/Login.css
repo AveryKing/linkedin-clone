@@ -10,7 +10,7 @@
 
 .login > img {
     object-fit: contain;
-    height: 70px;
+    height: 50px;
     margin-top:20px;
     margin-bottom:20px;
 }
@@ -27,7 +27,12 @@
     font-size:20px;
     padding-left:10px;
     margin-bottom:10px;
-    border-radius:10px;
+    border-radius:6px;
+    border:1px solid gray;
+}
+.login > form > input:focus {
+    outline:none;
+    box-shadow:0 0 0.8px 0.8px #0177b7;
 }
 
 .login > form > button {

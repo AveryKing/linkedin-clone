@@ -52,11 +52,11 @@ const Login = () => {
             <img src="https://www.paperlesslabacademy.com/wp-content/uploads/2017/02/linkedin-logo-transparent.png"
                  alt=""/>
             <form onSubmit={loginToApp}>
-                <input value={name} onChange={e => setName(e.target.value)} placeholder="Full name" type="text"/>
-                <input value={profilePicture} onChange={e => setProfilePicture(e.target.value)}
+                <input  autoComplete="none" value={name} onChange={e => setName(e.target.value)} placeholder="Full name" type="text"/>
+                <input autoComplete={"none" } value={profilePicture} onChange={e => setProfilePicture(e.target.value)}
                        placeholder="Profile pic URL (optional)" type="text"/>
-                <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" type="email"/>
-                <input value={password} onChange={e => setPassword(e.target.value)} placeholder="Password"
+                <input autoComplete={"none" } value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" type="email"/>
+                <input autoComplete={"none" } value={password} onChange={e => setPassword(e.target.value)} placeholder="Password"
                        type="password"/>
                 <button type='submit'>Sign In</button>
             </form>
