@@ -31,7 +31,7 @@ const Feed = () => {
 
     const updatePostInput = (evt) => setPostInput(evt.target.value);
 
-    const sendPost = async (evt) => {
+    const submitPost = async (evt) => {
         evt.preventDefault();
         // noinspection JSCheckFunctionSignatures
         await setDoc(doc(collection(db, 'posts')),{
@@ -50,7 +50,7 @@ const Feed = () => {
                     <CreateIcon />
                     <form>
                         <input value={postInput} onChange={updatePostInput} type="text"/>
-                        <button onClick={sendPost} type='submit'>Send</button>
+                        <button onClick={submitPost} type='submit'>Send</button>
                     </form>
                 </div>
                 <div className="feed__inputOptions">
