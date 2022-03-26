@@ -3,7 +3,7 @@ import './styles/App.css';
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Feed from "./components/Feed";
-import {useSelector} from "react-redux/lib/hooks/useSelector";
+import {useSelector} from "react-redux";
 import {selectUser} from "./redux/userSlice";
 import Login from "./components/Login";
 

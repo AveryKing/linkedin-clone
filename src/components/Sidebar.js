@@ -30,7 +30,7 @@ const Sidebar = () => {
             </div>
             <div className="sidebar__bottom">
                 <p>Recent</p>
-                {recentItem('reactjs')}
+                {recentItem('HireMe')}
                 {recentItem('design')}
                 {recentItem('programming')}
                 {recentItem('technology')}
