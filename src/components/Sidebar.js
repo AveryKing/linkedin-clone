@@ -4,12 +4,12 @@ import {Avatar} from "@mui/material";
 
 const Sidebar = () => {
     return (
-        <div>
+        <div className='sidebar'>
             <div className="sidebar__top">
                 <img src="" alt=""/>
                 <Avatar className='sidebar__avatar'/>
                 <h2>Avery King</h2>
-                <h4>averyking.com</h4>
+                <h4>avery@king.com</h4>
             </div>
             <div className="sidebar__stats">
                 <div className="sidebar__stat">
