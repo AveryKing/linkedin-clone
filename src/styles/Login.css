@@ -5,6 +5,7 @@
     margin-left:auto;
     margin-right:auto;
     padding-top:100px;
+    user-select:none;
     padding-bottom:100px;
 
 }
@@ -79,7 +80,7 @@
     margin-left:0.5rem;
     user-select:none;
     background-color:whitesmoke;
-    font-weight:500;
+    font-weight:400;
     margin-bottom:-20px;
     width:300px;
     height:40px;
@@ -96,6 +97,7 @@
     background-color: rgba(0, 166, 255, 0.1);
     transform:scale(1.02);
     cursor:pointer;
+
 
 
 }

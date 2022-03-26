@@ -24,13 +24,13 @@ function App() {
                 dispatch(logout());
             }
         })
-    }, [])
+    }, [dispatch])
   return (
     <div className="app">
-
+        {user && <Header/> }
         {user ? (
             <div className="app__body">
-                <Header/>
+
                 <Sidebar />
                 <Feed/>
                 <Widgets />

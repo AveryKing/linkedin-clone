@@ -8,7 +8,8 @@ import {FcGoogle} from 'react-icons/fc';
 import {GrGithub} from 'react-icons/gr';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import {Divider} from "@mui/material";
-
+import signInWithGoogle from "../lib/google-auth";
+import signInWithGitHub from "../lib/github-auth";
 const Login = () => {
     const [mode, setMode] = useState(1);
     const [email, setEmail] = useState('');
@@ -47,7 +48,7 @@ const Login = () => {
                     email:userAuth.user.email,
                     uid:userAuth.user.uid,
                     displayName:userAuth.user.displayName,
-                    photoUrL:userAuth.user.photoURL
+                    photoURL:userAuth.user.photoURL
                 }))
             })
             .catch((error) => alert(error.message))
@@ -73,12 +74,12 @@ const Login = () => {
                        type="password"/>
                 <button type='submit'>Sign In</button>
                 <Divider className='login__divider'>OR</Divider>
-                <div onClick={() => null}
+                <div onClick={() => signInWithGoogle()}
                      className='login__google'>
                     <FcGoogle size={25}/>
                     <p>Sign In With Google</p>
                 </div>
-                <div onClick={() => null}
+                <div onClick={() => signInWithGitHub()}
                      className='login__google'>
                     <GrGithub size={25}/>
                     <p>Sign In With GitHub</p>

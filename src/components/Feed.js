@@ -70,7 +70,7 @@ const Feed = () => {
                     <InputOption Icon={ImageIcon} text='Photo' color='#70B5F9'/>
                     <InputOption Icon={SubscriptionsIcon} text='Video' color='#E7A33E'/>
                     <InputOption Icon={EventNoteIcon} text='Event' color='#C0CBCD'/>
-                    <InputOption Icon={CalendarViewDayIcon} text='Write Article' color='#7FC15E'/>
+                    <InputOption Icon={CalendarViewDayIcon} text='Article' color='#7FC15E'/>
                 </div>
             </div>
             <FlipMove>
