@@ -23,3 +23,8 @@
 .post__body {
     overflow-wrap:anywhere;
 }
+
+.post__buttons {
+    display:flex;
+    font-size:13px;
+}

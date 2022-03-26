@@ -1,6 +1,11 @@
 import React from 'react';
 import '../styles/Post.css';
 import {Avatar} from "@mui/material";
+import InputOption from "./InputOption";
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
+import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 const Post = ({name,description,message,photoUrl}) => {
     return (
         <div className='post'>
@@ -15,7 +20,10 @@ const Post = ({name,description,message,photoUrl}) => {
                 <p>{message}</p>
             </div>
             <div className="post__buttons">
-                
+                <InputOption Icon={ThumbUpOffAltIcon} text='Like' color='gray' />
+                <InputOption Icon={ChatOutlinedIcon} text='Comment' color='gray' />
+                <InputOption Icon={ShareOutlinedIcon} text='Share' color='gray' />
+                <InputOption Icon={SendOutlinedIcon} text='Send' color='gray' />
             </div>
         </div>
     );
