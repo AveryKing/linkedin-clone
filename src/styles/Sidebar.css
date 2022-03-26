@@ -71,3 +71,14 @@
     border-radius:10px;
     margin-top:10px;
 }
+
+.sidebar__recentItem {
+    display:flex;
+    align-items:center;
+    font-size:12px;
+    color:gray;
+    font-weight:bolder;
+    cursor:pointer;
+    margin-bottom: 5px;
+    padding: 5px;
+}
