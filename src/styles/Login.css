@@ -5,6 +5,7 @@
     margin-right:auto;
     padding-top:100px;
     padding-bottom:100px;
+
 }
 
 .login > img {
@@ -12,4 +13,38 @@
     height: 70px;
     margin-top:20px;
     margin-bottom:20px;
+}
+
+.login > form {
+    display:flex;
+    flex-direction:column;
+}
+
+
+.login > form > input {
+    width: 300px;
+    height:40px;
+    font-size:20px;
+    padding-left:10px;
+    margin-bottom:10px;
+    border-radius:10px;
+}
+
+.login > form > button {
+    margin-left:0.5rem;
+    width:300px;
+    height:40px;
+    font-size:large;
+    color:#ffffff;
+    background-color: #0074b1;
+    border-radius: 10px;
+}
+
+.login__register {
+    color:#0177b7;
+    cursor:pointer;
+}
+
+.login > p {
+    margin-top:20px;
 }
