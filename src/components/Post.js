@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/Post.css';
 import {Avatar} from "@mui/material";
 import InputOption from "./InputOption";
@@ -7,6 +7,7 @@ import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 const Post = ({name,description,message,photoUrl}) => {
+    const [posts, setPosts] = useState([]);
     return (
         <div className='post'>
             <div className="post__header">
