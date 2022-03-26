@@ -10,9 +10,9 @@ const HeaderOption = ({ Icon,text, onClick}) => {
             <div onClick={onClick} className="headerOption">
                 {Icon && <Icon className='headerOption__icon'/> }
 
-                    <Avatar src={user?.photoUrl} className='headerOption__icon' >
+                {!Icon && <Avatar src={user?.photoUrl} className='headerOption__icon' >
                         {user?.displayName[0]}
-                    </Avatar>
+                    </Avatar> }
 
                 <h3 className='headerOption__title'>{text}</h3>
             </div>
