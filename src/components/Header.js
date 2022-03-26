@@ -9,7 +9,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import HeaderOption from "./HeaderOption";
 const Header = () => {
     return (
-        <div>
+
             <div className="header">
                 <div className="header__left">
                     <img
@@ -29,7 +29,7 @@ const Header = () => {
                     <HeaderOption avatar="https://avatars.githubusercontent.com/u/76629826?v=4" text="me" />
                 </div>
             </div>
-        </div>
+
     );
 };
 
