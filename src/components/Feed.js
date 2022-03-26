@@ -1,6 +1,7 @@
 import React from 'react';
 import CreateIcon from '@mui/icons-material/Create'
 import '../styles/Feed.css';
+import InputOption from "./InputOption";
 const Feed = () => {
     return (
         <div className='feed'>
