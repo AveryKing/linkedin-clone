@@ -1,10 +1,10 @@
-import { signInWithRedirect, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import {auth} from './firebase';
 import {store} from '../redux/store';
 import {login} from "../redux/userSlice";
 
 const signInWithGoogle = () => {
-    signInWithRedirect(auth, new GoogleAuthProvider())
+    signInWithPopup(auth, new GoogleAuthProvider())
         .then((userAuth) => {
             const {user} = userAuth;
             store.dispatch(login({
