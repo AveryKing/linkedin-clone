@@ -3,7 +3,7 @@ import '../styles/Login.css';
 import {auth} from "../lib/firebase";
 import {useDispatch} from "react-redux";
 import {login} from "../redux/userSlice";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -35,7 +35,17 @@ const Login = () => {
 
     }
     const loginToApp = (e) => {
-
+        e.preventDefault();
+        signInWithEmailAndPassword(auth,email,password)
+            .then((userAuth) => {
+                dispatch(login({
+                    email:userAuth.user.email,
+                    uid:userAuth.user.uid,
+                    displayName:userAuth.user.displayName,
+                    photoURL:userAuth.user.photoURL
+                }))
+            })
+            .catch((error) => alert(error.message))
     }
     return (
         <div className='login'>
