@@ -18,7 +18,6 @@ const Sidebar = () => {
             <div className="sidebar__top">
                 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2VhJTIwYmVhY2h8ZW58MHx8MHx8&w=1000&q=80" alt=""/>
                 <Avatar src={user.photoUrl} className='sidebar__avatar'>
-                    {user.displayName[0].toUpperCase() ?? null}
                 </Avatar>
                 <h2>{user.displayName}</h2>
                 <h4>{user.email}</h4>
