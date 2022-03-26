@@ -31,7 +31,7 @@ const Login = () => {
                             email: userAuth.user.email,
                             uid: userAuth.user.uid,
                             displayName:name,
-                            photoUrL:profilePicture
+                            photoUrL:''
                         }))
                     })
             })
@@ -57,36 +57,31 @@ const Login = () => {
         <div className='login'>
             <img src="https://www.paperlesslabacademy.com/wp-content/uploads/2017/02/linkedin-logo-transparent.png"
                  alt=""/>
-            <div className="login__text">
-                <p className='login__message'>In a hurry?<br/><span>Click here to use demo account</span></p>
-            </div>
 
-            <form onSubmit={loginToApp}>
+            <form onSubmit={mode === 1 ? loginToApp : register}>
                 {mode === 2 && (
                     <>
                         <input  autoComplete="none" value={name} onChange={e => setName(e.target.value)} placeholder="Full name" type="text"/>
-                        <input autoComplete={"none" } value={profilePicture} onChange={e => setProfilePicture(e.target.value)}
-                               placeholder="Profile pic URL (optional)" type="text"/>
                     </>
                 )}
                 <input autoComplete={"none" } value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" type="email"/>
                 <input autoComplete={"none" } value={password} onChange={e => setPassword(e.target.value)} placeholder="Password"
                        type="password"/>
-                <button type='submit'>Sign In</button>
+                <button type='submit'>{mode === 1 ? 'Sign In' : 'Sign Up'}</button>
                 <Divider className='login__divider'>OR</Divider>
                 <div onClick={() => signInWithGoogle()}
                      className='login__google'>
                     <FcGoogle size={25}/>
-                    <p>Sign In With Google</p>
+                    {mode === 1 ? <p>Sign In With Google</p> : <p>Sign Up With Google</p> }
                 </div>
                 <div onClick={() => signInWithGitHub()}
                      className='login__google'>
                     <GrGithub size={25}/>
-                    <p>Sign In With GitHub</p>
+                    {mode === 1 ? <p>Sign In With GitHub</p> : <p>Sign Up With Google</p> }
                 </div>
             </form>
-            <p className='login__notMember'>Not a member?{" "}
-                <span className='login__registerNow' onClick={register}>Register Now</span></p>
+            {mode === 1 &&<p className='login__notMember'>Not a member?{" "}
+                <span className='login__registerNow' onClick={()=>setMode(2)}>Register Now</span></p>  }
             <footer>
                 Created with <FavoriteIcon sx={{position:'relative',fontSize:'20px',top:'5px',color:'#ff004d'}} /> by Avery King
             </footer>
