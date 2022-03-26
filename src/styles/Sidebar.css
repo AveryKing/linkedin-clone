@@ -21,3 +21,8 @@
     background-color:white;
     padding-bottom:10px;
 }
+
+.sidebar__top > img {
+    margin-bottom: -20px;
+    width:100%;
+}
