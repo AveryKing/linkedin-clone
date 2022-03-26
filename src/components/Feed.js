@@ -7,27 +7,41 @@ import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay'
 import '../styles/Feed.css';
 import InputOption from "./InputOption";
 import Post from "./Post";
+import {serverTimestamp} from 'firebase/database';
 import {db} from '../lib/firebase';
-import { collection, query, where, onSnapshot } from "firebase/firestore";
+
+import { collection, doc,setDoc, onSnapshot } from "firebase/firestore";
 
 const Feed = () => {
-    const [posts, setPosts] = useState([1,2,2,2,2,2,2]);
+    const [postInput, setPostInput] = useState('');
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         onSnapshot(collection(db, 'posts'), (snapshot) => {
-            const posts = [];
+            const newPosts = [];
             snapshot.forEach((doc) => (
-                posts.push({
+                newPosts.push({
                     id:doc.id,
                     data:doc.data()
                 })
             ))
-            setPosts([posts]);
+            setPosts(newPosts);
         })
     },[])
 
-    const sendPost = (evt) => {
+    const updatePostInput = (evt) => setPostInput(evt.target.value);
+
+    const sendPost = async (evt) => {
         evt.preventDefault();
+        // noinspection JSCheckFunctionSignatures
+        await setDoc(doc(collection(db, 'posts')),{
+            name: 'Avery King',
+            description: 'Hello, world!',
+            message: postInput,
+            photoUrl: '',
+            timestamp:serverTimestamp()
+        });
+
     }
     return (
         <div className='feed'>
@@ -35,7 +49,7 @@ const Feed = () => {
                 <div className="feed__input">
                     <CreateIcon />
                     <form>
-                        <input type="text"/>
+                        <input value={postInput} onChange={updatePostInput} type="text"/>
                         <button onClick={sendPost} type='submit'>Send</button>
                     </form>
                 </div>
