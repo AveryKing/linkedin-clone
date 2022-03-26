@@ -25,7 +25,7 @@ const Login = () => {
                             email: userAuth.user.email,
                             uid: userAuth.user.uid,
                             displayName:name,
-                            photoURL:profilePicture
+                            photoUrL:profilePicture
                         }))
                     })
             })
@@ -42,7 +42,7 @@ const Login = () => {
                     email:userAuth.user.email,
                     uid:userAuth.user.uid,
                     displayName:userAuth.user.displayName,
-                    photoURL:userAuth.user.photoURL
+                    photoUrL:userAuth.user.photoURL
                 }))
             })
             .catch((error) => alert(error.message))
