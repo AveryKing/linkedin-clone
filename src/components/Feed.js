@@ -7,47 +7,56 @@ import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay'
 import '../styles/Feed.css';
 import InputOption from "./InputOption";
 import Post from "./Post";
-import {serverTimestamp} from 'firebase/database';
 import {db} from '../lib/firebase';
 
-import { collection, doc,setDoc, onSnapshot } from "firebase/firestore";
+import {
+    collection,
+    serverTimestamp,
+    doc,
+    setDoc,
+    query,
+    onSnapshot,
+    orderBy
+} from "firebase/firestore";
 
 const Feed = () => {
     const [postInput, setPostInput] = useState('');
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        onSnapshot(collection(db, 'posts'), (snapshot) => {
+        const q = query(collection(db, 'posts'), orderBy('timestamp', 'desc'));
+        onSnapshot(q, (snapshot) => {
             const newPosts = [];
             snapshot.forEach((doc) => (
                 newPosts.push({
-                    id:doc.id,
-                    data:doc.data()
+                    id: doc.id,
+                    data: doc.data()
                 })
             ))
             setPosts(newPosts);
         })
-    },[])
+    }, [])
 
     const updatePostInput = (evt) => setPostInput(evt.target.value);
 
     const submitPost = async (evt) => {
         evt.preventDefault();
         // noinspection JSCheckFunctionSignatures
-        await setDoc(doc(collection(db, 'posts')),{
+        await setDoc(doc(collection(db, 'posts')), {
             name: 'Avery King',
             description: 'Hello, world!',
             message: postInput,
             photoUrl: '',
-            timestamp:serverTimestamp()
+            timestamp: serverTimestamp()
         });
+        setPostInput('')
 
     }
     return (
         <div className='feed'>
             <div className="feed__inputContainer">
                 <div className="feed__input">
-                    <CreateIcon />
+                    <CreateIcon/>
                     <form>
                         <input value={postInput} onChange={updatePostInput} type="text"/>
                         <button onClick={submitPost} type='submit'>Send</button>
@@ -60,13 +69,13 @@ const Feed = () => {
                     <InputOption Icon={CalendarViewDayIcon} text='Write Article' color='#7FC15E'/>
                 </div>
             </div>
-            {posts.map(({id, data: {name,description,message,photoUrl}},index) =>  (
+            {posts.map(({id, data: {name, description, message, photoUrl}}, index) => (
                 <Post key={index}
                       name={name}
                       description={description}
                       message={message}
                       photoUrl={photoUrl}
-                      />
+                />
             ))}
 
         </div>
