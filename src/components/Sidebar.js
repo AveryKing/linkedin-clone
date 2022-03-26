@@ -10,6 +10,7 @@ const recentItem = (topic) => {
 }
 
 const Sidebar = () => {
+    const user = useSelector(selectUser);
     return (
         <div className='sidebar'>
             <div className="sidebar__top">
