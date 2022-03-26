@@ -30,11 +30,11 @@ const Sidebar = () => {
             </div>
             <div className="sidebar__bottom">
                 <p>Recent</p>
-                {recentItem('HireMe')}
-                {recentItem('design')}
-                {recentItem('programming')}
-                {recentItem('technology')}
-                {recentItem('nextjs')}
+                {recentItem('hireme')}
+                {recentItem('fullstack')}
+                {recentItem('developer')}
+                {recentItem('reactjs')}
+                {recentItem('nodejs')}
             </div>
         </div>
     );

@@ -24,7 +24,7 @@ function App() {
                 dispatch(logout());
             }
         })
-    })
+    }, [])
   return (
     <div className="app">
       <Header/>

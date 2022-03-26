@@ -7,9 +7,21 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import HeaderOption from "./HeaderOption";
+import {useDispatch} from "react-redux";
+import {logout} from "../redux/userSlice";
+import {auth} from "../lib/firebase";
+import {signOut} from 'firebase/auth';
 const Header = () => {
-    return (
+    const dispatch = useDispatch();
+    const logoutOfApp = () => {
+        dispatch(logout());
+        signOut(auth)
+            .then(() => {
 
+            })
+            .catch(err => alert(err.message))
+    }
+    return (
             <div className="header">
                 <div className="header__left">
                     <img
@@ -26,7 +38,7 @@ const Header = () => {
                     <HeaderOption text='Jobs' Icon={BusinessCenterIcon} />
                     <HeaderOption text='Messaging' Icon={ChatIcon} />
                     <HeaderOption text='Notifications' Icon={NotificationsIcon} />
-                    <HeaderOption avatar="https://avatars.githubusercontent.com/u/76629826?v=4" text="me" />
+                    <HeaderOption onClick={logoutOfApp} avatar="https://avatars.githubusercontent.com/u/76629826?v=4" text="me" />
                 </div>
             </div>
 

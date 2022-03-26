@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/HeaderOption.css';
 import {Avatar} from "@mui/material";
-const HeaderOption = ({avatar, Icon,text}) => {
+const HeaderOption = ({avatar, Icon,text, onClick}) => {
     return (
         <div>
-            <div className="headerOption">
+            <div onClick={onClick} className="headerOption">
                 {Icon && <Icon className='headerOption__icon'/> }
                 {avatar && (
                     <Avatar src={avatar} className='headerOption__icon' />
