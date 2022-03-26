@@ -22,6 +22,7 @@ const Feed = () => {
                     data:doc.data()
                 })
             ))
+            setPosts([posts]);
         })
     },[])
 
