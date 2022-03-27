@@ -1,5 +1,6 @@
 # LinkedIn Clone
 This project a clone of [LinkedIn](https://linkedin.com) that I created using React and Firebase. <br/>
+[Click here to view a live demo](https://linkedin-clone-fawn.vercel.app/)
 
 ---
 Features
@@ -8,8 +9,6 @@ Features
 - Real-time post feed
 - State management using Redux
 - Styling wit vanilla CSS
-
-[Click here to view a live demo](https://linkedin-clone-fawn.vercel.app/)
 
 
 
