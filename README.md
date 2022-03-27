@@ -4,13 +4,18 @@ This project a clone of [LinkedIn](https://linkedin.com) that I created using Re
 ---
 Features
 ---
-include authentication (via email, Google, or GitHub) as well as a real-time post feed. The project uses Redux for state management and vanilla CSS for styling.
+- Registration/login via email, Google, or GitHub
+- Real-time post feed
+- State management using Redux
+- Styling wit vanilla CSS
 
 [Click here to view a live demo](https://linkedin-clone-fawn.vercel.app/)
 
 
 
-# Project Setup
+---
+Project Setup
+---
 Want to use my project? 
 - Clone this repository
 - Modify ``lib/firebase.js`` to include the configuration details for your Firebase project
