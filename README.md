@@ -8,7 +8,7 @@ Features
 - Registration/login via email, Google, or GitHub
 - Real-time post feed
 - State management using Redux
-- Styling wit vanilla CSS
+- Styling with vanilla CSS
 
 
 
