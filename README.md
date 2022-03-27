@@ -1,5 +1,9 @@
 # LinkedIn Clone
-This project a clone of [LinkedIn](https://linkedin.com) that I created using React, Redux, and Firebase.
+This project a clone of [LinkedIn](https://linkedin.com) that I created using React and Firebase. Features include authentication (via multiple providers), and a live post feed. The project uses Redux for state management and vanilla CSS for styling.
+
+[Click here to view a live demo](https://linkedin-clone-fawn.vercel.app/)
+
+
 
 # Project Setup
 Want to use my project? 
