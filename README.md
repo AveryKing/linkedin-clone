@@ -1,5 +1,6 @@
 # LinkedIn Clone
 This project a clone of [LinkedIn](https://linkedin.com) that I created using React and Firebase. <br/>
+-----
 Features
 ------
 include authentication (via email, Google, or GitHub) as well as a real-time post feed. The project uses Redux for state management and vanilla CSS for styling.
